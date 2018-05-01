@@ -6,7 +6,7 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
 
-public class PocketControllerTest {
+public class PocketAuthControllerTest {
 
 	@Test
 	public void test() {
