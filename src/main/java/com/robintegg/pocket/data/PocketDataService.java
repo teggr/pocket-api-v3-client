@@ -31,7 +31,7 @@ public class PocketDataService {
 	@Autowired
 	private ObjectMapper mapper;
 
-	public PocketData get(String accessToken) throws IOException {
+	public PocketData get(String accessToken, String state) throws IOException {
 
 		ClientHttpRequest post = factory.createRequest(URI.create("https://getpocket.com/v3/get"), HttpMethod.POST);
 		post.getHeaders().add(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_FORM_URLENCODED_VALUE + ";charset=UTF-8");
@@ -39,8 +39,8 @@ public class PocketDataService {
 		MultiValueMap<String, String> formData = new LinkedMultiValueMap<>();
 		formData.add("consumer_key", consumerKey);
 		formData.add("access_token", accessToken);
-		formData.add("state", "unread");
-		formData.add("detailType", "simple");
+		formData.add("state", state);
+		formData.add("detailType", "complete");
 
 		UriComponents buildAndExpand = UriComponentsBuilder.newInstance().queryParams(formData).build();
 

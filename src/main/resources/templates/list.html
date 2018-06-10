@@ -5,8 +5,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div><a href="/">Home</a>
+	<div><ul>
+	<a href="/">Home</a>
+	<a href="/pocket?state=unread">Unread</a>
+	<a href="/pocket?state=archive">Archive</a>
+	<a href="/pocket?state=all">All</a>
+	</ul>
 	</div>
 	<p>look in th elogs</p>
+	<pre th:text="${yamlContent}">
+	</pre>
 </body>
 </html>

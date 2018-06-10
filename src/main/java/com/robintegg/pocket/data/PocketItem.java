@@ -1,5 +1,8 @@
 package com.robintegg.pocket.data;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class PocketItem {
@@ -44,6 +47,12 @@ public class PocketItem {
 	private String wordCount;
 	@JsonProperty("top_image_url")
 	private String topImageUrl;
+	@JsonProperty("tags")
+	private Map<String, Tag> tags = new HashMap<>();
+	
+	public Map<String,Tag> getTags() {
+		return tags;
+	}
 
 	public String getItemId() {
 		return itemId;
